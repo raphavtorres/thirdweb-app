@@ -49,13 +49,11 @@ Blockchain technology (via ThirdWeb) is used to issue NFTs as rewards for consis
 
 ### ⚙️ Backend
 
-- **ThirdWeb**: Handles **smart contract deployment, NFT minting, and wallet integration**.
-- **Node.js/Express.js**: For backend logic, **progress tracking, task management, and API integrations**.
+- **ThirdWeb**: Handles smart contract deployment, NFT minting, and wallet integration.
 
 ### 📂 Database
 
-- **Firebase/Firestore**: NoSQL database for **scalable, real-time storage**.
-- **Supabase (Alternative)**: Open-source Firebase alternative with **built-in authentication & real-time capabilities**.
+- **Supabase (Optional)**: Open-source with built-in authentication & real-time capabilities.
 
 ### 🧠 AI Integration
 
@@ -64,13 +62,13 @@ Blockchain technology (via ThirdWeb) is used to issue NFTs as rewards for consis
 
 ### 🔑 Authentication
 
-- **WalletConnect/MetaMask**: **Secure wallet-based login** & blockchain interaction.
-- **ThirdWeb Auth**: **Simplifies wallet-based authentication & user management**.
+- **WalletConnect**: Secure wallet-based login & blockchain interaction.
+- **ThirdWeb Auth**: Simplifies wallet-based authentication & user management.
 
 ### 🔗 Blockchain & NFTs
 
-- **ThirdWeb**: Manages **smart contracts for NFT issuance & ownership tracking**.
-- **Polygon (Matic)**: Low-cost, **Ethereum-compatible blockchain** for NFTs.
+- **ThirdWeb**: Manages smart contracts for NFT issuance & ownership tracking.
+- **Polygon (Matic) `<will probably change>`**: Low-cost, Ethereum-compatible blockchain for NFTs.
 
 ### 🚀 Hosting & Deployment
 
