@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/app-sidebar";
 import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
+
 import { ThirdwebProvider } from "thirdweb/react";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,7 +24,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThirdwebProvider>{children}</ThirdwebProvider>
+        <ThirdwebProvider>
+          <SidebarProvider>
+            <div className="flex min-h-screen">
+              <AppSidebar />
+              <main className="flex-1">{children}</main>
+            </div>
+            <Toaster />
+          </SidebarProvider>
+        </ThirdwebProvider>
       </body>
     </html>
   );
