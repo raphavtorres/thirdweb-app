@@ -11,9 +11,8 @@ import { ThirdwebProvider } from "thirdweb/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "thirdweb SDK + Next starter",
-  description:
-    "Starter template for using thirdweb SDK with Next.js App router",
+  title: "Language Learning app",
+  description: "Language Learning app using Thirdweb and AI",
 };
 
 export default function RootLayout({
@@ -26,10 +25,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThirdwebProvider>
           <SidebarProvider>
-            <div className="flex min-h-screen">
-              <AppSidebar />
-              <main className="flex-1">{children}</main>
-            </div>
+            {children}
             <Toaster />
           </SidebarProvider>
         </ThirdwebProvider>

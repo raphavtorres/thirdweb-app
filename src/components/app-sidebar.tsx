@@ -1,8 +1,9 @@
 "use client";
 
-import { Book, Layout, MessageSquare, Trophy, Wallet } from "lucide-react";
+import { MessageSquare, Trophy, Wallet } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import WalletConnect from "./wallet-connect";
 
 import {
   Sidebar,
@@ -15,10 +16,9 @@ import {
 } from "@/components/ui/sidebar";
 
 const navigation = [
-  { name: "Dashboard", href: "/", icon: Layout },
+  { name: "Dashboard", href: "/", icon: Trophy },
+  // { name: "Dashboard", href: "/", icon: Layout },
   { name: "AI Chat", href: "/chat", icon: MessageSquare },
-  { name: "Team", href: "/team", icon: Trophy },
-  { name: "Progress", href: "/progress", icon: Book },
   { name: "NFTs", href: "/nfts", icon: Wallet },
 ];
 
@@ -49,7 +49,7 @@ export function AppSidebar() {
         </SidebarMenu>
       </SidebarContent>
       <SidebarFooter className="border-t p-4">
-        {/* <WalletConnect /> */}
+        <WalletConnect />
       </SidebarFooter>
     </Sidebar>
   );

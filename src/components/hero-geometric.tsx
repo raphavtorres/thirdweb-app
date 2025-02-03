@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Pacifico } from "next/font/google";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import WalletConnect from "./wallet-connect";
 
 const pacifico = Pacifico({
   subsets: ["latin"],
@@ -78,9 +79,9 @@ function ElegantShape({
 }
 
 export default function HeroGeometric({
-  badge = "Kokonut UI",
-  title1 = "Elevate Your",
-  title2 = "Digital Vision",
+  badge = "Lefy",
+  title1 = "Power Up Your",
+  title2 = "Language",
 }: {
   badge?: string;
   title1?: string;
@@ -100,8 +101,8 @@ export default function HeroGeometric({
   };
 
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#030303]">
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
+    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#1a3a64]">
+      <div className="absolute inset-0 bg-gradient-to-br from-teal-950/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
 
       <div className="absolute inset-0 overflow-hidden">
         <ElegantShape
@@ -118,7 +119,7 @@ export default function HeroGeometric({
           width={500}
           height={120}
           rotate={-15}
-          gradient="from-rose-500/[0.15]"
+          gradient="from-indigo-500/[0.15]"
           className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
         />
 
@@ -136,7 +137,7 @@ export default function HeroGeometric({
           width={200}
           height={60}
           rotate={20}
-          gradient="from-amber-500/[0.15]"
+          gradient="from-violet-500/[0.15]"
           className="right-[15%] md:right-[20%] top-[10%] md:top-[15%]"
         />
 
@@ -197,9 +198,17 @@ export default function HeroGeometric({
             animate="visible"
           >
             <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
-              Crafting exceptional digital experiences through innovative design
-              and cutting-edge technology.
+              Empowering language mastery through intuitive design, AI-driven
+              insights, and gamified learning experiences.
             </p>
+          </motion.div>
+          <motion.div
+            custom={3}
+            variants={fadeUpVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <WalletConnect />
           </motion.div>
         </div>
       </div>

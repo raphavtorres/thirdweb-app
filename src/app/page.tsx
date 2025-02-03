@@ -1,7 +1,12 @@
 "use client";
 
-import HeroGeometric from "@/components/hero-geometric";
+import { AppLayout } from "@/components/app-layout";
+import { Dashboard } from "@/components/dashboard";
 
 export default function Home() {
-  return <HeroGeometric />;
+  return (
+    <AppLayout>
+      <Dashboard />
+    </AppLayout>
+  );
 }
