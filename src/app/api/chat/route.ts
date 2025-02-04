@@ -1,13 +1,21 @@
 import { openai } from "@ai-sdk/openai";
-import { streamText, generateText } from "ai";
+import { streamText } from "ai";
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
+const MEMORY_LIMIT = 5;
 
 const language = "Mandarin";
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
+
+  console.log(messages);
+  console.log(messages[messages.length - 1]?.content);
+
+  const lastMessage = messages[messages.length - 1]?.content || "";
+
+  const conversationHistory = messages.slice(-MEMORY_LIMIT);
 
   const prompt = `You are a language learning assistant specializing in ${language}. Your goal is to help students understand and learn Mandarin by providing accurate translations, word-by-word explanations, and simple grammar insights. Your responses should be clear, structured, and easy to understand.
 
@@ -22,14 +30,18 @@ If it's a word or expression, return:
 If the person asks for translation, you can also pass from the language she is using to ${language}
 Case you detect grammar or spelling mistakes, you can point them out
 
-The user query: ${messages}`;
+Chat history:
+${conversationHistory
+  .map((m: { role: string; content: string }) => `${m.role}: ${m.content}`)
+  .join("\n")}
 
-  const { text: response } = await generateText({
-    model: openai("gpt-4o"),
-    // messages,
+Question: ${lastMessage}`;
+
+  const result = streamText({
+    model: openai("gpt-4o-mini"),
     prompt: prompt,
   });
 
-  console.log(response);
-  return response;
+  console.log(result.toDataStreamResponse());
+  return result.toDataStreamResponse();
 }
