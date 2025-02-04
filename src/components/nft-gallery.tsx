@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import { useActiveAccount } from "thirdweb/react";
 
 interface NFT {
   id: string;
@@ -27,9 +28,9 @@ const nfts: NFT[] = [
 ];
 
 export function NFTGallery() {
-  const address = "";
+  const account = useActiveAccount();
 
-  if (!address) {
+  if (!account) {
     return (
       <div className="p-8 text-center">
         <p>Connect your wallet to view your NFTs</p>
