@@ -1,3 +1,5 @@
+"use client";
+
 import type React from "react";
 import { AppSidebar } from "./app-sidebar";
 import HeroGeometric from "@/components/hero-geometric";
