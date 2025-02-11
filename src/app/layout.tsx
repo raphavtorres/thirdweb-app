@@ -5,7 +5,7 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 
-import { ThirdwebProvider } from "thirdweb/react";
+import { ThirdwebProvider } from "@/app/thirdweb";
 
 const inter = Inter({ subsets: ["latin"] });
 
