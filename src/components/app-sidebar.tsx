@@ -1,6 +1,12 @@
 "use client";
 
-import { MessageSquare, Trophy, Wallet, Settings } from "lucide-react";
+import {
+  MessageSquare,
+  Trophy,
+  Wallet,
+  Settings,
+  BadgeCheck,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import WalletConnect from "./wallet-connect";
@@ -22,6 +28,7 @@ const navigation = [
   { name: "AI Chat", href: "/chat", icon: MessageSquare, needAdmin: false },
   { name: "NFTs", href: "/nfts", icon: Wallet, needAdmin: false },
   { name: "Settings", href: "/admin", icon: Settings, needAdmin: true },
+  { name: "Tasks", href: "/acc-test", icon: BadgeCheck, needAdmin: false },
 ];
 
 export function AppSidebar() {
