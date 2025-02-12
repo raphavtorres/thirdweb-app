@@ -1,17 +1,8 @@
 import { ConnectButton } from "thirdweb/react";
 import { darkTheme } from "thirdweb/react";
-import { createWallet } from "thirdweb/wallets";
-import { client } from "@/app/client";
+import { client } from "@/utils/client";
 import { sepolia } from "thirdweb/chains";
-
-const wallets = [
-  createWallet("io.metamask"),
-  createWallet("com.safepal"),
-  createWallet("com.coinbase.wallet"),
-  createWallet("io.rabby"),
-  createWallet("io.zerion.wallet"),
-  createWallet("com.binance"),
-];
+import { wallets } from "@/utils/wallets";
 
 function WalletConnect() {
   return (
