@@ -1,21 +1,16 @@
 import { ConnectButton } from "thirdweb/react";
 import { darkTheme } from "thirdweb/react";
-import { inAppWallet, createWallet } from "thirdweb/wallets";
-import { client } from "@/app/client";
+import { client } from "@/utils/client";
 import { sepolia } from "thirdweb/chains";
+// import { wallets } from "@/utils/wallets";
+import { createWallet } from "thirdweb/wallets";
 
-const wallets = [
-  inAppWallet({
-    auth: {
-      options: ["google", "discord", "email"],
-    },
-  }),
+export const wallets = [
   createWallet("io.metamask"),
+  createWallet("com.safepal"),
   createWallet("com.coinbase.wallet"),
-  createWallet("me.rainbow"),
   createWallet("io.rabby"),
   createWallet("io.zerion.wallet"),
-  createWallet("com.trustwallet.app"),
   createWallet("com.binance"),
 ];
 
